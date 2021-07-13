@@ -1,0 +1,61 @@
+[
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/main.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/main.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/main.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/Server.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Server.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Server.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/ConnectionManager.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/ConnectionManager.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/ConnectionManager.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/HeaderParser.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HeaderParser.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HeaderParser.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/Connection.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Connection.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Connection.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/HandlerManager.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HandlerManager.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HandlerManager.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/Reply.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Reply.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Reply.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/RoomManager.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/RoomManager.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/RoomManager.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/TokenGenerator.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/TokenGenerator.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/TokenGenerator.cpp"
+},
+
+{
+  "directory": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include  -g   -std=gnu++17 -o CMakeFiles/WebServer.dir/UserManager.cpp.o -c /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/UserManager.cpp",
+  "file": "/home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/UserManager.cpp"
+}
+]
