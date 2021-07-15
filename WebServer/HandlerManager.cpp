@@ -19,6 +19,11 @@ HandlerManager::HandlerManager() {
             !userManager.checkLoggedIn(token))
             return Reply(Reply::BAD_REQUEST);
         const auto& username = userManager.getNameFromToken(token);
+        auto originRoomId = userManager.getRoomIdFromUser(username);
+        if (originRoomId != -1) {
+            // userManager.userLeaveRoom(username);
+            roomManager.removeUser(originRoomId, username);
+        }
         userManager.userEnterRoom(username, roomId);
         roomManager.addUser(roomId, username);
         return Reply(Reply::OK);
@@ -30,10 +35,11 @@ HandlerManager::HandlerManager() {
             return Reply(Reply::BAD_REQUEST);
         const auto& username = userManager.getNameFromToken(token);
         auto roomId = userManager.getRoomIdFromUser(username);
-        if (roomId == -1)
-            return Reply(Reply::BAD_REQUEST);
+        // if (roomId == -1)
+        //     return Reply(Reply::BAD_REQUEST);
         userManager.userLeaveRoom(username);
-        roomManager.removeUser(roomId, username);
+        if (roomId != -1)
+            roomManager.removeUser(roomId, username);
         return Reply(Reply::OK);
     };
 
@@ -52,16 +58,18 @@ HandlerManager::HandlerManager() {
                 return Reply(Reply::BAD_REQUEST);
             json r = json::array();
             for (const auto& i : roomManager.getRoom(roomId).users)
-                r.emplace_back(json({{"username", i}}));
+                r.emplace_back(i);
             return Reply(Reply::OK, r.dump(), Reply::JSON);
         }
     };
 
     postHandlers["roomList"] = [&](json&& j) -> RETURN_TYPE {
-        int sz = j["pageSize"], start = j["pageIndex"].get<int>() * sz;
+        int index = j["pageIndex"], sz = j["pageSize"], start = index * sz;
+        if (index < 0)
+            return Reply(Reply::BAD_REQUEST);
         // if (!roomManager.checkRoomId(start))
         //     return Reply(Reply::BAD_REQUEST);
-        int end = std::min(start + sz, roomManager.getCount() - 1);
+        int end = std::min(start + sz - 1, roomManager.getCount() - 1);
 
         json r = json::array();
         for (int i = start; i <= end; i++) {
@@ -107,8 +115,8 @@ HandlerManager::HandlerManager() {
             int sz = j["pageSize"], index = j["pageIndex"],
                 end = room.messages.size() + (index + 1) * sz - 1,
                 start = std::max(end - sz + 1, 0);
-            // if (end < 0)
-            //     return Reply(Reply::BAD_REQUEST);
+            if (index >= 0)
+                return Reply(Reply::BAD_REQUEST);
             json r = json::array();
             for (int i = start; i <= end; i++) {
                 const auto& message = room.messages[i];

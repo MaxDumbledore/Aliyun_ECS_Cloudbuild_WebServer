@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: WebServer
-# Configuration: Debug
+# Configuration: Release
 # =============================================================================
 
 #############################################
@@ -63,70 +63,70 @@ build cmake_object_order_depends_target_WebServer: phony || CMakeFiles/WebServer
 
 build CMakeFiles/WebServer.dir/main.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/main.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/main.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/Server.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Server.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/Server.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/ConnectionManager.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/ConnectionManager.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/ConnectionManager.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/HeaderParser.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HeaderParser.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/HeaderParser.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/Connection.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Connection.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/Connection.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/HandlerManager.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/HandlerManager.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/HandlerManager.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/Reply.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/Reply.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/Reply.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/RoomManager.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/RoomManager.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/RoomManager.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/TokenGenerator.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/TokenGenerator.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/TokenGenerator.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
 
 build CMakeFiles/WebServer.dir/UserManager.cpp.o: CXX_COMPILER__WebServer /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/UserManager.cpp || cmake_object_order_depends_target_WebServer
   DEP_FILE = CMakeFiles/WebServer.dir/UserManager.cpp.o.d
-  FLAGS = -g   -std=gnu++17
+  FLAGS = -O3 -DNDEBUG   -std=gnu++17
   INCLUDES = -I/home/max/asio-1.18.1/include -I/home/max/nlohmann_json_cmake_fetchcontent/include -I/home/max/jwt-cpp/include
   OBJECT_DIR = CMakeFiles/WebServer.dir
   OBJECT_FILE_DIR = CMakeFiles/WebServer.dir
@@ -140,7 +140,7 @@ build CMakeFiles/WebServer.dir/UserManager.cpp.o: CXX_COMPILER__WebServer /home/
 # Link the executable WebServer
 
 build WebServer: CXX_EXECUTABLE_LINKER__WebServer CMakeFiles/WebServer.dir/main.cpp.o CMakeFiles/WebServer.dir/Server.cpp.o CMakeFiles/WebServer.dir/ConnectionManager.cpp.o CMakeFiles/WebServer.dir/HeaderParser.cpp.o CMakeFiles/WebServer.dir/Connection.cpp.o CMakeFiles/WebServer.dir/HandlerManager.cpp.o CMakeFiles/WebServer.dir/Reply.cpp.o CMakeFiles/WebServer.dir/RoomManager.cpp.o CMakeFiles/WebServer.dir/TokenGenerator.cpp.o CMakeFiles/WebServer.dir/UserManager.cpp.o | /usr/lib/x86_64-linux-gnu/libcrypto.so
-  FLAGS = -g
+  FLAGS = -O3 -DNDEBUG
   LINK_LIBRARIES = -lpthread  /usr/lib/x86_64-linux-gnu/libcrypto.so
   OBJECT_DIR = CMakeFiles/WebServer.dir
   POST_BUILD = :
@@ -173,14 +173,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindOpenSSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindOpenSSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindOpenSSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build /home/max/Aliyun_ECS_Cloudbuild_WebServer/WebServer/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindOpenSSL.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################

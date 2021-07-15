@@ -7,7 +7,7 @@
 
 # =============================================================================
 # Project: WebServer
-# Configuration: Debug
+# Configuration: Release
 # =============================================================================
 # =============================================================================
 
@@ -25,7 +25,7 @@ rule CUSTOM_COMMAND
 rule CXX_COMPILER__WebServer
   depfile = $DEP_FILE
   deps = gcc
-  command = /bin/x86_64-linux-gnu-g++-9  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = /bin/clang++-10  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -33,7 +33,7 @@ rule CXX_COMPILER__WebServer
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__WebServer
-  command = $PRE_LINK && /bin/x86_64-linux-gnu-g++-9  $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /bin/clang++-10  $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 

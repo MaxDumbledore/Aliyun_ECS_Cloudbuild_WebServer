@@ -48,6 +48,21 @@ inline bool isDigit(char c) {
     return c >= '0' && c <= '9';
 }
 
+std::string decode(std::string& src) {
+    std::string ret;
+    char ch;
+    int ii;
+    for (int i = 0; i < src.size(); i++) {
+        if (src[i] == '%') {
+            sscanf(src.substr(i + 1, 2).c_str(), "%x", &ii);
+            ret += static_cast<char>(ii);
+            i += 2;
+        } else
+            ret += src[i];
+    }
+    return (ret);
+}
+
 HeaderParser::ResultType HeaderParser::append(char c) {
     switch (state) {
         case METHOD_START:
@@ -71,11 +86,13 @@ HeaderParser::ResultType HeaderParser::append(char c) {
         case URI_PATH:
             if (c == ' ') {
                 state = HTTP_VERSION_H;
+                uriPath=decode(uriPath); //
                 return INDETERMINATE;
             } else if (isCtl(c)) {
                 return BAD;
             } else if (c == '?') {
                 state = URI_KEY;
+                uriPath=decode(uriPath); //
                 uriParams.emplace_back();
                 return INDETERMINATE;
             } else {
@@ -83,30 +100,32 @@ HeaderParser::ResultType HeaderParser::append(char c) {
                 return INDETERMINATE;
             }
         case URI_KEY:
-            if(c==' '){
-                state=HTTP_VERSION_H;
+            if (c == ' ') {
+                state = HTTP_VERSION_H;
                 return INDETERMINATE;
-            }else if(isCtl(c)){
+            } else if (isCtl(c)) {
                 return BAD;
-            }else if(c=='='){
-                state=URI_VALUE;
+            } else if (c == '=') {
+                state = URI_VALUE;
                 return INDETERMINATE;
-            }else{
-                uriParams.back().first+=c;
+            } else {
+                uriParams.back().first += c;
                 return INDETERMINATE;
             }
         case URI_VALUE:
-            if(c==' '){
-                state=HTTP_VERSION_H;
+            if (c == ' ') {
+                state = HTTP_VERSION_H;
+                uriParams.back().second=decode(uriParams.back().second);//
                 return INDETERMINATE;
-            }else if(isCtl(c)){
+            } else if (isCtl(c)) {
                 return BAD;
-            }else if(c=='&'){
-                state=URI_KEY;
+            } else if (c == '&') {
+                state = URI_KEY;
+                uriParams.back().second=decode(uriParams.back().second);//
                 uriParams.emplace_back();
                 return INDETERMINATE;
-            }else{
-                uriParams.back().second+=c;
+            } else {
+                uriParams.back().second += c;
                 return INDETERMINATE;
             }
         case HTTP_VERSION_H:
@@ -265,14 +284,15 @@ std::string HeaderParser::get(const std::string& name) {
     return "";
 }
 
-const std::string &HeaderParser::getUriPath() {
-    return uriPath;    
+const std::string& HeaderParser::getUriPath() {
+    return uriPath;
 }
 
-const std::vector<std::pair<std::string, std::string>> & HeaderParser::getUriParams() {
-    return uriParams;    
+const std::vector<std::pair<std::string, std::string>>&
+HeaderParser::getUriParams() {
+    return uriParams;
 }
 
-const std::string & HeaderParser::getMethod() {
-    return method;    
+const std::string& HeaderParser::getMethod() {
+    return method;
 }

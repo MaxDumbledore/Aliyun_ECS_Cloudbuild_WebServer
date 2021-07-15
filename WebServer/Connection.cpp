@@ -1,7 +1,7 @@
 #include "Connection.h"
+#include <iostream>
 #include "ConnectionManager.h"
 #include "Reply.h"
-#include <iostream>
 
 #define MAX_BYTES 2048
 
@@ -90,22 +90,21 @@ void Connection::response() {
     try {
         buffer = handlerManager.deal(headerParser.getMethod(),
                                      uriPath)(std::move(body));
-    }catch(std::exception &e){
-        std::clog<<e.what()<<std::endl;
-        //manager.stop(self);
+    } catch (std::exception& e) {
+        std::clog << e.what() << std::endl;
+        // manager.stop(self);
 
-        buffer=Reply(Reply::BAD_REQUEST);
+        buffer = Reply(Reply::BAD_REQUEST);
     }
     body = json();
 
-    asio::async_write(socket, asio::buffer(buffer),
-                      [this, self](const asio::error_code& ec, std::size_t) {
-                          if (ec) {
-                              manager.stop(self);
-                              return;
-                          }
-                          asio::error_code ignored;
-                          socket.shutdown(asio::ip::tcp::socket::shutdown_both,
-                                          ignored);
-                      });
+    asio::async_write(
+        socket, asio::buffer(buffer),
+        [this, self](const asio::error_code& ec, std::size_t) {
+            if (!ec) {
+                asio::error_code ignored;
+                socket.shutdown(asio::ip::tcp::socket::shutdown_both, ignored);
+            }
+            manager.stop(self);
+        });
 }

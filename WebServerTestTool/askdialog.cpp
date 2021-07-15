@@ -1,35 +1,20 @@
 #include "askdialog.h"
-#include "ui_askdialog.h"
 
-AskDialog::AskDialog(AskType askType, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::AskDialog)
+AskDialog::AskDialog(const QString&initial, QWidget *parent) : QInputDialog(parent)
 {
-    ui->setupUi(this);
+    setOptions(QInputDialog::UsePlainTextEditForTextInput);
     setFixedSize(400,500);
-    QString s;
-    switch (askType) {
-    case USER_INFO:
-        s="{\n"
-          "\"username\": \"string\",\n"
-          "\"firstName\": \"string\",\n"
-          "\"lastName\": \"string\",\n"
-          "\"email\": \"string\",\n"
-          "\"password\": \"string\",\n"
-          "\"phone\": \"string\"\n"
-          "}";
-    default:
-        break;
-    }
-    ui->textEdit->setText(s);
+    setWindowTitle("Dialog");
+    setTextValue(initial);
 }
 
-AskDialog::~AskDialog()
+QString AskDialog::getContent(QWidget *parent,const QString &t, bool *ok)
 {
-    delete ui;
-}
-
-QString AskDialog::getContent()
-{
-    return ui->textEdit->toPlainText();
+    AskDialog dialog(t,parent);
+    const int ret=dialog.exec();
+    if (ok)
+        *ok = !!ret;
+    if (ret)
+        return dialog.textValue();
+    return QString();
 }

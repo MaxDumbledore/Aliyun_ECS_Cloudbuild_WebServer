@@ -13,6 +13,7 @@ UserManager::UserManager() {
             j["password"] = e;
             j["phone"] = f;
             nameToInfo.emplace(a, std::move(j));
+            nameToItem.emplace(a, (Item){false, -1});
         }
         fclose(userFile);
     }
@@ -24,8 +25,7 @@ bool UserManager::insert(json&& user) {
         return false;
 
     userFile = fopen("./user.txt", "a");
-    fprintf(userFile, "%s %s %s %s %s %s\n",
-            name.data(),
+    fprintf(userFile, "%s %s %s %s %s %s\n", name.data(),
             user["firstName"].get<std::string>().data(),
             user["lastName"].get<std::string>().data(),
             user["email"].get<std::string>().data(),
@@ -40,8 +40,8 @@ bool UserManager::insert(json&& user) {
 
 std::pair<bool, std::string> UserManager::login(const std::string& username,
                                                 const std::string password) {
-    auto& info = nameToInfo[username];
-    if (info["password"] != password)
+    if (!nameToInfo.count(username) ||
+        nameToInfo[username]["password"] != password)
         return {false, ""};
 
     auto& item = nameToItem[username];

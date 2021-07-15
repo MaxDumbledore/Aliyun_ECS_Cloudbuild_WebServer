@@ -4,6 +4,6 @@
 #include "TokenGenerator.h"
 
 int main() {
-    Server s("127.0.0.1",8080);
+    Server s("0.0.0.0",8080);
     return 0;
 }
