@@ -19,14 +19,23 @@ RoomManager::RoomManager() {
             rooms[i].messages.emplace_back((Message){x, y, u});
         fclose(messageFile);
     }
+
+    roomFile = fopen("./room.txt", "a");
+    for (int i = 0; i < rooms.size(); i++)
+        rooms[i].file =
+            fopen(("./room_" + std::to_string(i) + ".txt").data(), "a");
 }
 
 int RoomManager::createNewRoom(const std::string& name) {
-    rooms.emplace_back((Room){name, {}, {}});
+    rooms.emplace_back(
+        (Room){name,
+               {},
+               {},
+               fopen(("./room_" + std::to_string(rooms.size()) + ".txt").data(),
+                     "a")});
 
-    roomFile = fopen("./room.txt", "a");
     fprintf(roomFile, "%s\n", name.data());
-    fclose(roomFile);
+    fflush(roomFile);
 
     return rooms.size() - 1;
 }
@@ -52,11 +61,9 @@ void RoomManager::removeUser(int roomId, const std::string& name) {
 }
 
 void RoomManager::addMessage(int roomId, Message&& message) {
-    messageFile =
-        fopen(("./room_" + std::to_string(roomId) + ".txt").data(), "a");
-    fprintf(messageFile, "%s %s %u\n", message.id.data(), message.text.data(),
-            (unsigned int)message.timestamp);
-    fclose(messageFile);
+    fprintf(rooms[roomId].file, "%s %s %u\n", message.id.data(),
+            message.text.data(), (unsigned int)message.timestamp);
+    fflush(rooms[roomId].file);
 
     rooms[roomId].messages.emplace_back(std::move(message));
 }

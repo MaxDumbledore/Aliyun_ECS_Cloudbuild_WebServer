@@ -12,29 +12,32 @@ UserManager::UserManager() {
             j["email"] = d;
             j["password"] = e;
             j["phone"] = f;
-            nameToInfo.emplace(a, std::move(j));
-            nameToItem.emplace(a, (Item){false, -1});
+            nameToInfo[a] = std::move(j);
+            nameToItem[a] = (Item){false, -1};
         }
         fclose(userFile);
     }
+    userFile = fopen("./user.txt", "a");
 }
 
 bool UserManager::insert(json&& user) {
     std::string name = user["username"];
-    if (nameToItem.count(name))
-        return false;
+    // if (nameToItem.count(name))
+    //     return false;
 
-    userFile = fopen("./user.txt", "a");
     fprintf(userFile, "%s %s %s %s %s %s\n", name.data(),
             user["firstName"].get<std::string>().data(),
             user["lastName"].get<std::string>().data(),
             user["email"].get<std::string>().data(),
             user["password"].get<std::string>().data(),
             user["phone"].get<std::string>().data());
-    fclose(userFile);
+    fflush(userFile);
 
-    nameToItem.emplace(user["username"], (Item){false, -1});
-    nameToInfo.emplace(user["username"], std::move(user));
+    // nameToItem.emplace(user["username"], (Item){false, -1});
+    // nameToInfo.emplace(user["username"], std::move(user));
+
+    nameToItem[name] = (Item){false, -1};
+    nameToInfo[name] = std::move(user);
     return true;
 }
 

@@ -15,6 +15,7 @@ struct Room{
     std::string name;
     std::set<std::string> users;
     std::vector<Message> messages;
+    FILE *file;
 };
 
 class RoomManager {

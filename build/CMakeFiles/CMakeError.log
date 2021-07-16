@@ -1,15 +1,15 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/max/Aliyun_ECS_Cloudbuild_WebServer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_818a4 && [1/2] Building C object CMakeFiles/cmTC_818a4.dir/src.c.o
-[2/2] Linking C executable cmTC_818a4
-FAILED: cmTC_818a4 
-: && /bin/clang-10 -DCMAKE_HAVE_LIBC_PTHREAD   CMakeFiles/cmTC_818a4.dir/src.c.o  -o cmTC_818a4   && :
-/bin/ld: CMakeFiles/cmTC_818a4.dir/src.c.o: in function `main':
-src.c:(.text+0x35): undefined reference to `pthread_create'
-/bin/ld: src.c:(.text+0x41): undefined reference to `pthread_detach'
-/bin/ld: src.c:(.text+0x53): undefined reference to `pthread_join'
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Run Build Command(s):/usr/bin/ninja cmTC_fe008 && [1/2] Building C object CMakeFiles/cmTC_fe008.dir/src.c.o
+[2/2] Linking C executable cmTC_fe008
+FAILED: cmTC_fe008 
+: && /bin/x86_64-linux-gnu-gcc-9 -DCMAKE_HAVE_LIBC_PTHREAD   CMakeFiles/cmTC_fe008.dir/src.c.o  -o cmTC_fe008   && :
+/usr/bin/ld: CMakeFiles/cmTC_fe008.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
 
 
@@ -36,12 +36,12 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/max/Aliyun_ECS_Cloudbuild_WebServer/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e00f4 && [1/2] Building C object CMakeFiles/cmTC_e00f4.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_e00f4
-FAILED: cmTC_e00f4 
-: && /bin/clang-10 -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_e00f4.dir/CheckFunctionExists.c.o  -o cmTC_e00f4  -lpthreads && :
-/bin/ld: cannot find -lpthreads
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
+Run Build Command(s):/usr/bin/ninja cmTC_a04e8 && [1/2] Building C object CMakeFiles/cmTC_a04e8.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_a04e8
+FAILED: cmTC_a04e8 
+: && /bin/x86_64-linux-gnu-gcc-9 -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_a04e8.dir/CheckFunctionExists.c.o  -o cmTC_a04e8  -lpthreads && :
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
 ninja: build stopped: subcommand failed.
 
 
